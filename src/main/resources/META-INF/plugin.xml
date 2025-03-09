@@ -1,18 +1,26 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.elvedroid.deepseektemplatetc</id>
-    <name>deepseek-template-tc</name>
-    <vendor>elvedroid</vendor>
+    <id>com.github.lv.aigent</id>
+    <name>aigent</name>
+    <vendor>LV</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.java</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.elvedroid.deepseektemplatetc.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.elvedroid.deepseektemplatetc.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    <actions>
+        <group id="aigent" text="Aigent" popup="true">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <action
+                    id="aigent.GenerateCallbackAction"
+                    class="com.github.lv.aigent.actions.GenerateCallbackAction"
+                    text="Generate Callback"
+                    description="Generate callback">
+                <add-to-group group-id="aigent" anchor="first"/>
+                <keyboard-shortcut
+                        keymap="$default"
+                        first-keystroke="control alt G"/>
+            </action>
+        </group>
+    </actions>
 </idea-plugin>
