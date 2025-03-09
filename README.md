@@ -4,7 +4,8 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 
-Plugin that speeds up Android development based on my preferences. Designed for personal use at the moment.
+<!-- Plugin description -->
+Plugin` that speeds up Android development based on my preferences. Designed for personal use at the moment.
 <!-- Plugin description end -->
 
 ## Installation

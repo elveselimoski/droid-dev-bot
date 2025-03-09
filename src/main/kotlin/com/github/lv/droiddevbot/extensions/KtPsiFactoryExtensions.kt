@@ -1,4 +1,4 @@
-package com.github.lv.aigent.extensions
+package com.github.lv.droiddevbot.extensions
 
 import com.intellij.psi.PsiElement
 import com.intellij.psi.codeStyle.CodeStyleManager

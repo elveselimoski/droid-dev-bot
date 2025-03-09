@@ -1,4 +1,4 @@
-package com.github.lv.aigent.extensions
+package com.github.lv.droiddevbot.extensions
 
 import com.intellij.psi.util.parentOfType
 import org.jetbrains.kotlin.idea.caches.resolve.resolveToCall

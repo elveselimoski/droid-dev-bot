@@ -1,8 +1,8 @@
-package com.github.lv.aigent.actions
+package com.github.lv.droiddevbot.actions
 
-import com.github.lv.aigent.extensions.addCallbackToComposableAndUsages
-import com.github.lv.aigent.extensions.parentComposable
-import com.github.lv.aigent.extensions.invokeCallback
+import com.github.lv.droiddevbot.extensions.addCallbackToComposableAndUsages
+import com.github.lv.droiddevbot.extensions.parentComposable
+import com.github.lv.droiddevbot.extensions.invokeCallback
 import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
