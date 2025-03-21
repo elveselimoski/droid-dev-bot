@@ -17,8 +17,6 @@ jobs:
 
       - name: Fetch Sources
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.release.tag_name }}
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -32,16 +30,22 @@ jobs:
       - name: Build plugin
         run: ./gradlew buildPlugin
 
-      - name: Create plugin directory
-        run: |
-          mkdir -p plugin-repository
-          cp build/distributions/*.zip plugin-repository/
-        # cp updatePlugins.xml plugin-repository/
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Update uploadPlugins.xml file
+        uses: elveselimoski/intellij-update-plugins-xml-action@v0.1.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./plugin-repository
-          publish_branch: gh-pages
-          force_orphan: true
+          version: "0.1.0"
+          url: "https://www.test.com/plugin.zip"
+
+      # - name: Create plugin directory
+      #   run: |
+      #     mkdir -p plugin-repository
+      #     cp build/distributions/*.zip plugin-repository/
+      #   # cp updatePlugins.xml plugin-repository/
+
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./plugin-repository
+      #     publish_branch: gh-pages
+      #     force_orphan: true
