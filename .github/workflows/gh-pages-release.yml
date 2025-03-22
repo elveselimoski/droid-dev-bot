@@ -3,8 +3,10 @@ name: Release in GitHub repository
 on:
   workflow_dispatch:
 
-  push:
-    branches: [ develop ]
+  workflow_run:
+    workflows: ['Build']
+    types:
+      - completed
 
 jobs:
 
@@ -15,29 +17,15 @@ jobs:
       pull-requests: write
     steps:
 
-      - name: Fetch Sources
-        uses: actions/checkout@v4
-
-      - name: Gradle Wrapper Validation
-        uses: gradle/actions/wrapper-validation@v4
-
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: zulu
-          java-version: 17
-
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-
-      - name: Build plugin
-        run: ./gradlew buildPlugin
-
       - name: Update uploadPlugins.xml file
         uses: elveselimoski/intellij-update-plugins-xml-action@v0.1.0
         with:
           version: "0.1.0"
           url: "https://www.test.com/plugin.zip"
+      
+      - name: List files in the distributions
+        run: |
+          ls -la build/distributions
 
       # - name: Create plugin directory
       #   run: |
