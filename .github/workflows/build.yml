@@ -108,7 +108,7 @@ jobs:
       - name: Generate uploadPlugins.xml file
         uses: DamianReeves/write-file-action@master
         with:
-          path: uploadPlugins.xml
+          path: updatePlugins.xml
           write-mode: overwrite
           contents: |
             <?xml version="1.0" encoding="UTF-8"?>
