@@ -9,18 +9,35 @@
     <depends>com.intellij.java</depends>
 
     <actions>
-        <group id="droiddevbot" text="Droid Dev Bot" popup="true">
+        <group id="DroidDevBot" text="Droid Dev Bot" popup="true">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
             <action
-                    id="droiddevbot.GenerateCallbackAction"
+                    id="DroidDevBot.GenerateCallbackAction"
                     class="com.github.lv.droiddevbot.actions.GenerateCallbackAction"
                     text="Generate Callback"
                     description="Generate callback">
-                <add-to-group group-id="droiddevbot" anchor="first"/>
+                <add-to-group group-id="DroidDevBot" anchor="after"
+                              relative-to-action="DroidDevBot.Menu.CreateHiltViewModel"/>
                 <keyboard-shortcut
                         keymap="$default"
-                        first-keystroke="control alt G"/>
+                        first-keystroke="alt G"/>
+            </action>
+        </group>
+        <group id="DroidDevBot.Menu" text="Droid Dev Bot" popup="true">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+            <action
+                    id="DroidDevBot.Menu.CreateHiltViewModel"
+                    class="com.github.lv.droiddevbot.actions.CreateHiltViewModelAction"
+                    text="Create Hilt ViewModel">
+                <add-to-group group-id="DroidDevBot.Menu" anchor="first"/>
+                <add-to-group group-id="DroidDevBot" anchor="first"/>
+                <keyboard-shortcut
+                        keymap="$default"
+                        first-keystroke="alt V"/>
             </action>
         </group>
     </actions>
+    <extensions defaultExtensionNs="com.intellij">
+        <internalFileTemplate name="HiltViewModel"/>
+    </extensions>
 </idea-plugin>
