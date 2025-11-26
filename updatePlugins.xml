@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugins>
+  <plugin
+      id="com.github.elveselimoski.droid-dev-bot"
+      url="https://elveselimoski.github.io/droid-dev-bot/droid-dev-bot-0.1.0.zip"
+      version="0.1.0">
+    <idea-version since-build="233" until-build="243.*"/>
+  </plugin>
+</plugins>
